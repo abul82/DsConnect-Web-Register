@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home Page</title>
+	 <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width initial-scale=1.0">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> 
+     
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+            <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>            
+             <link rel="stylesheet" href="css/login.css" />
+
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+           
+            <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase.js"></script>
+</head>
+<body>
+	<body class="h-100">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    Namba Doctor
+                </a>
+
+                <div class="dropdown navbar-right">
+                    <button 
+                    id="user-email"
+                    class="btn btn-secondary dropdown-toggle"
+                    type="button"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                    >
+                       Menu
+                    </button>
+
+                    <div 
+                        class="dropdown-menu"
+                        aria-labeledby="user-email"
+                    >
+                        <a class="dropdown-item" id="btn-logout" href="#">
+                            Logout
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+       <!--  <div class="row h-100 bg-light">
+            <div class="col-lg-2 bg-secondary">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="switchView('views/images.html')">
+                            <span class="text-dark">Reports</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="switchView('views/categories.html')">
+                            <span class="text-dark">Categories</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-10">
+                <div class="container" id="container">
+ 
+                </div>
+            </div>
+        </div> -->
+        <div id="login-card" class="card">
+          <div class="card-body">
+              <h1>Reports</h1>
+              <form id="login-form">
+                  <div class="form-group">
+                      <label id="brID"></label><br>
+                      <!-- <input type="email" id="email" class="form-control" /> -->
+                  </div>
+                  <div class="form-group">
+                          <label id="cirId"></label>
+                          <!-- <input type="password" id="password" class="form-control" /> -->
+                  </div>
+                  <div class="form-group">
+                      <!-- <button id="btn-login" type="button" class="btn btn-primary">Login</button> -->
+                  </div>
+              </form>
+          </div>
+      </div><br>
+        <script src="js/login.js"></script>
+	 <script type="text/javascript">
+	 	window.onload = function() {
+          initApp();
+            };
+	 	 firebase.auth().onAuthStateChanged(function(user){
+                    if(!user){
+                        window.location.href = "login.html";
+                    }else{
+                    // uid = user.uid;
+                    }
+                });
+	 	 function initApp(){
+                    var user = firebase.auth().currentUser;
+                    if (user != null) {
+                    user.providerData.forEach(function (profile) {
+                        console.log("Sign-in provider: " + profile.providerId);
+                        console.log("  Provider-specific UID: " + profile.uid);
+                        console.log("  Name: " + profile.displayName);
+                        console.log("  Email: " + profile.email);
+                        console.log("  Photo URL: " + profile.photoURL);
+                    });
+                    }else{
+                        console.log("User is NUll");
+                    }
+                }
+	 </script>
+
+</body>
+</html>
