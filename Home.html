@@ -87,6 +87,7 @@
       </div><br>
         <script src="js/login.js"></script>
 	 <script type="text/javascript">
+    var authToken;
 	 	window.onload = function() {
           initApp();
             };
@@ -102,7 +103,8 @@
                     console.log(user);
                     if (user != null) {
                       user.getIdToken(/* forceRefresh */ true).then(function(idToken) {
-                           console.log(idToken);
+                        authToken = idToken;
+                           console.log(authToken);
                           }).catch(function(error) {
                             // Handle error
                           });
