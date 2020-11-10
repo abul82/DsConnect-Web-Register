@@ -102,6 +102,7 @@
                     console.log(user);
                     if (user != null) {
                     user.providerData.forEach(function (profile) {
+                        console.log(profile);
                         console.log("Sign-in provider: " + profile.providerId);
                         console.log("  Provider-specific UID: " + profile.uid);
                         console.log("  Name: " + profile.displayName);
