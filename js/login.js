@@ -11,14 +11,14 @@ const config = {
  firebase.initializeApp(config);
 
  firebase.auth.Auth.Persistence.LOCAL; 
-firebase.auth().languageCode = 'it';
+firebase.auth().languageCode = 'en';
 
  $("#btn-login").click(function(){
         // var email = $("#email").val();
         // var password = $("#password").val(); 
         var phoneNumber =$("#email").val();
-		var appVerifier = window.recaptchaVerifier;
-			console.log(phoneNumber);
+    var appVerifier = window.recaptchaVerifier;
+      console.log(phoneNumber);
             console.log(appVerifier);
         var result = firebase.auth().signInWithPhoneNumber(phoneNumber, appVerifier)
         .then(function(confirmationResult) {
@@ -36,11 +36,31 @@ firebase.auth().languageCode = 'it';
         });
 
     });
+ function submitPhoneNumber(){
+  var phoneNumber =$("#email").val();
+    var appVerifier = window.recaptchaVerifier;
+      console.log(phoneNumber);
+            console.log(appVerifier);
+        var result = firebase.auth().signInWithPhoneNumber(phoneNumber, appVerifier)
+        .then(function(confirmationResult) {
+            window.confirmationResult = confirmationResult;
+        console.log(confirmationResult);
+          });
+    
+        console.log(result);
+        result.catch(function(error){
+            var errorCode = error.code; 
+            var errorMessage = error.message; 
+
+            console.log(errorCode);
+            console.log(errorMessage);
+        });
+ }
 
 $("#btn-logout").click(function(){
         var result = firebase.auth().signOut();
         result.catch(function(error){
-        	var errorCode = error.code; 
+          var errorCode = error.code; 
             var errorMessage = error.message; 
 
             console.log(errorCode);
