@@ -8,6 +8,10 @@ const config = {
   appId: "1:418517212993:web:7c822c37f193a001854bc0",
   measurementId: "G-Z0EZ43X166"
 };
+var admin = require('firebase-admin');
+admin.initializeApp({
+  credential: admin.credential.applicationDefault()
+});
  firebase.initializeApp(config);
 
  firebase.auth.Auth.Persistence.LOCAL; 
