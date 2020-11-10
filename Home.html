@@ -101,6 +101,11 @@
       firebase.auth().onAuthStateChanged(function(user){
                     console.log(user);
                     if (user != null) {
+                      user.getIdToken(/* forceRefresh */ true).then(function(idToken) {
+                           console.log(idToken);
+                          }).catch(function(error) {
+                            // Handle error
+                          });
                     user.providerData.forEach(function (profile) {
                         console.log(profile);
                         console.log("Sign-in provider: " + profile.providerId);
