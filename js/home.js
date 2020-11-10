@@ -39,6 +39,6 @@ function loadUserType(){
 		}).then(function (data) {
 			console.log(data);
 		}).catch(function (error) {
-			console.warn('Something went wrong.', error);
+			console.log('Something went wrong.', error);
 		});
 }
