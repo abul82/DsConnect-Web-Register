@@ -19,7 +19,7 @@ const config = {
  firebase.auth.Auth.Persistence.LOCAL; 
 firebase.auth().languageCode = 'en';
 var otp_form = document.getElementById("otp-form");
-otp-form.style.display = "none";
+otp_form.style.display = "none";
  $("#btn-login").click(function(){
         // var email = $("#email").val();
         // var password = $("#password").val(); 
@@ -47,7 +47,7 @@ otp-form.style.display = "none";
         var result = firebase.auth().signInWithPhoneNumber(phoneNumber, appVerifier)
         .then(function(confirmationResult) {
             window.confirmationResult = confirmationResult;
-            otp-form.style.display = "block";
+            otp_form.style.display = "block";
         console.log(confirmationResult);
           });
     
@@ -81,7 +81,7 @@ otp-form.style.display = "none";
         var result = firebase.auth().signInWithPhoneNumber(phoneNumber, appVerifier)
         .then(function(confirmationResult) {
             window.confirmationResult = confirmationResult;
-            otp-form.style.display = "block";
+           otp_form.style.display = "block";
         console.log(confirmationResult);
           });
     
