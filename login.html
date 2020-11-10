@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Login Page</title>
-	 <meta charset="utf-8">
-	  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Login Page</title>
+     <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge" />
       <meta name="viewport" content="width=device-width initial-scale=1.0">
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   
@@ -14,7 +14,7 @@
         
 </head>
 <body class="bg-dark">
-	<div id="login-card" class="card">
+    <div id="login-card" class="card">
             <div class="card-body">
                 <h1>Circle</h1>
                 <form id="login-form">
@@ -39,22 +39,22 @@
         <script src="js/login.js"></script>
 
         <script type="text/javascript">
-        	window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier(
+            window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier(
         "recaptcha-container",
         {
           size: "normal",
           callback: function(response) {
-            // submitPhoneNumberAuth();
+            submitPhoneNumber();
           }
         }
       );
-        	 firebase.auth().onAuthStateChanged(function(user){
-        	 	if (user) {
-		          console.log("USER LOGGED IN");
-		        } else {
-		          // No user is signed in.
-		          console.log("USER NOT LOGGED IN");
-		        }
+             firebase.auth().onAuthStateChanged(function(user){
+                if (user) {
+                  console.log("USER LOGGED IN");
+                } else {
+                  // No user is signed in.
+                  console.log("USER NOT LOGGED IN");
+                }
                 // if(user){
                 //   var displayName = user.displayName;
                 //   var email = user.email;
