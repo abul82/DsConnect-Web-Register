@@ -1,5 +1,5 @@
+var authToken;
 function loadUser(){
-	var authToken;
 	firebase.auth().onAuthStateChanged(function(user){
                     console.log(user);
                     if (user != null) {
@@ -21,4 +21,23 @@ function loadUser(){
                         console.log("User is NUll");
                     }
                    });
+}
+
+function loadUserType(){
+	fetch('https://dsconnectwebapp.azurewebsites.net/api/v1/usertype', {
+	method: 'GET',
+	body: '-H "accept: application/json" -H "AuthenticationToken: ' + encodeURIComponent(authToken),
+	headers: {
+		'Content-type': 'application/x-www-form-urlencoded'
+	}
+		}).then(function (response) {
+			if (response.ok) {
+				return response.json();
+			}
+			return Promise.reject(response);
+		}).then(function (data) {
+			console.log(data);
+		}).catch(function (error) {
+			console.warn('Something went wrong.', error);
+		});
 }

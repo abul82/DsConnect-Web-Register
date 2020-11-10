@@ -91,6 +91,7 @@
     var authToken;
 	 	window.onload = function() {
           loadUser();
+          loadUserType();
             };
 	 	 firebase.auth().onAuthStateChanged(function(user){
                     if(!user){
