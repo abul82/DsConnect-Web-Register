@@ -75,7 +75,8 @@ firebase.auth().languageCode = 'en';
 //       // Error; SMS not sent
 //       // ...
 //     });
-
+    var phoneNumber ="+"+$("#email").val();
+    var appVerifier = window.recaptchaVerifier;
         var result = firebase.auth().signInWithPhoneNumber(phoneNumber, appVerifier)
         .then(function(confirmationResult) {
             window.confirmationResult = confirmationResult;
