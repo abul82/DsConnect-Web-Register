@@ -6,6 +6,7 @@ function loadUser(){
                       user.getIdToken(/* forceRefresh */ true).then(function(idToken) {
                         authToken = idToken;
                            console.log(authToken);
+                           loadUserType();
                           }).catch(function(error) {
                             // Handle error
                           });
