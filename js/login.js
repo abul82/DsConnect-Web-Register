@@ -24,7 +24,7 @@ firebase.auth().languageCode = 'en';
         // var password = $("#password").val(); 
 //          firebase.auth().settings.appVerificationDisabledForTesting = true;
 //   // var phoneNumber =$("#email").val();
-  var phoneNumber = "+911234567890";
+  var phoneNumber = "+917871095074";
 // var testVerificationCode = "123456";
 //     var appVerifier = window.recaptchaVerifier;
 //       console.log(phoneNumber);
@@ -57,12 +57,11 @@ firebase.auth().languageCode = 'en';
             console.log(errorCode);
             console.log(errorMessage);
         });
-
     });
  function submitPhoneNumber(){
 //   firebase.auth().settings.appVerificationDisabledForTesting = true;
 //   // var phoneNumber =$("#email").val();
-  var phoneNumber = "+911234567890";
+  var phoneNumber = "+917871095074";
 // var testVerificationCode = "123456";
 //     var appVerifier = window.recaptchaVerifier;
 //       console.log(phoneNumber);
