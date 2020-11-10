@@ -19,7 +19,7 @@ const config = {
  firebase.auth.Auth.Persistence.LOCAL; 
 firebase.auth().languageCode = 'en';
 var otp_form = document.getElementById("otp-form");
-otp_form.style.display = "none";
+
  $("#btn-login").click(function(){
         // var email = $("#email").val();
         // var password = $("#password").val(); 

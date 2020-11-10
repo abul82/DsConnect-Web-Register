@@ -38,6 +38,10 @@
         <script src="js/login.js"></script>
 
         <script type="text/javascript">
+            window.onload = function() {
+          var otp_form = document.getElementById("otp-form");
+              otp_form.style.display = "none";
+            };
             window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier(
         "recaptcha-container",
         {
