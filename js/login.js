@@ -24,7 +24,7 @@ firebase.auth().languageCode = 'en';
         // var password = $("#password").val(); 
 //          firebase.auth().settings.appVerificationDisabledForTesting = true;
 //   // var phoneNumber =$("#email").val();
-//   var phoneNumber = "+911234567890";
+  var phoneNumber = "+911234567890";
 // var testVerificationCode = "123456";
 //     var appVerifier = window.recaptchaVerifier;
 //       console.log(phoneNumber);
@@ -39,7 +39,7 @@ firebase.auth().languageCode = 'en';
 //     });
 
 
-    var phoneNumber ="+"+$("#email").val();
+    // var phoneNumber ="+"+$("#email").val();
     var appVerifier = window.recaptchaVerifier;
       console.log(phoneNumber);
             console.log(appVerifier);
@@ -62,7 +62,7 @@ firebase.auth().languageCode = 'en';
  function submitPhoneNumber(){
 //   firebase.auth().settings.appVerificationDisabledForTesting = true;
 //   // var phoneNumber =$("#email").val();
-//   var phoneNumber = "+911234567890";
+  var phoneNumber = "+911234567890";
 // var testVerificationCode = "123456";
 //     var appVerifier = window.recaptchaVerifier;
 //       console.log(phoneNumber);
@@ -75,7 +75,7 @@ firebase.auth().languageCode = 'en';
 //       // Error; SMS not sent
 //       // ...
 //     });
-    var phoneNumber ="+"+$("#email").val();
+    // var phoneNumber ="+"+$("#email").val();
     var appVerifier = window.recaptchaVerifier;
         var result = firebase.auth().signInWithPhoneNumber(phoneNumber, appVerifier)
         .then(function(confirmationResult) {
