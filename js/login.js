@@ -21,61 +21,29 @@ firebase.auth().languageCode = 'en';
 var otp_form = document.getElementById("otp-form");
 
  $("#btn-login").click(function(){
-        // var email = $("#email").val();
-        // var password = $("#password").val(); 
-//          firebase.auth().settings.appVerificationDisabledForTesting = true;
-//   // var phoneNumber =$("#email").val();
-  // var phoneNumber = "+917871095074";
-// var testVerificationCode = "123456";
-//     var appVerifier = window.recaptchaVerifier;
-//       console.log(phoneNumber);
-//             console.log(appVerifier);
-//             firebase.auth().signInWithPhoneNumber(phoneNumber, appVerifier)
-//     .then(function (confirmationResult) {
-//       // confirmationResult can resolve with the fictional testVerificationCode above.
-//       return confirmationResult.confirm(testVerificationCode)
-//     }).catch(function (error) {
-//       // Error; SMS not sent
-//       // ...
-//     });
-
-
-    var phoneNumber ="+"+$("#email").val();
-    var appVerifier = window.recaptchaVerifier;
-      console.log(phoneNumber);
-            console.log(appVerifier);
-        var result = firebase.auth().signInWithPhoneNumber(phoneNumber, appVerifier)
-        .then(function(confirmationResult) {
-            window.confirmationResult = confirmationResult;
-            otp_form.style.display = "block";
-        console.log(confirmationResult);
-          });
+          submitPhoneNumber()
+    // var phoneNumber ="+"+$("#email").val();
+    // var appVerifier = window.recaptchaVerifier;
+    //   console.log(phoneNumber);
+    //         console.log(appVerifier);
+    //     var result = firebase.auth().signInWithPhoneNumber(phoneNumber, appVerifier)
+    //     .then(function(confirmationResult) {
+    //         window.confirmationResult = confirmationResult;
+    //         otp_form.style.display = "block";
+    //     console.log(confirmationResult);
+    //       });
     
-        console.log(result);
-        result.catch(function(error){
-            var errorCode = error.code; 
-            var errorMessage = error.message; 
+    //     console.log(result);
+    //     result.catch(function(error){
+    //         var errorCode = error.code; 
+    //         var errorMessage = error.message; 
 
-            console.log(errorCode);
-            console.log(errorMessage);
-        });
+    //         console.log(errorCode);
+    //         console.log(errorMessage);
+    //     });
     });
  function submitPhoneNumber(){
-//   firebase.auth().settings.appVerificationDisabledForTesting = true;
-//   // var phoneNumber =$("#email").val();
-  // var phoneNumber = "+917871095074";
-// var testVerificationCode = "123456";
-//     var appVerifier = window.recaptchaVerifier;
-//       console.log(phoneNumber);
-//             console.log(appVerifier);
-//             firebase.auth().signInWithPhoneNumber(phoneNumber, appVerifier)
-//     .then(function (confirmationResult) {
-//       // confirmationResult can resolve with the fictional testVerificationCode above.
-//       return confirmationResult.confirm(testVerificationCode)
-//     }).catch(function (error) {
-//       // Error; SMS not sent
-//       // ...
-//     });
+
     var phoneNumber ="+"+$("#email").val();
     var appVerifier = window.recaptchaVerifier;
         var result = firebase.auth().signInWithPhoneNumber(phoneNumber, appVerifier)
