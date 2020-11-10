@@ -39,7 +39,7 @@ firebase.auth().languageCode = 'en';
 //     });
 
 
-        var phoneNumber =$("#email").val();
+    var phoneNumber ="+"+$("#email").val();
     var appVerifier = window.recaptchaVerifier;
       console.log(phoneNumber);
             console.log(appVerifier);
