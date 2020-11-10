@@ -19,14 +19,16 @@
                 <h1>Circle</h1>
                 <form id="login-form">
                     <div class="form-group">
+                      <div class="col-md-6">
                         <label for="email">Phone Number<label>
-                        <input type="text" id="email" class="form-control" />
+                        <input type="text" id="email" class="form-control" /><br>
                         <button id="btn-login" type="button" class="btn btn-primary">Send OTP</button>
                     </div>
+                      </div>
                      <div class="form-group" id="otp-form">
-                            <label for="otp">OTP</label>
-                            <input type="number" id="otp" class="form-control" />
-                            <button id="btn-verify" type="button" class="btn btn-primary">Verify</button>
+                        <label for="otp">OTP</label>
+                        <input type="number" id="otp" class="form-control"/><br>
+                        <button id="btn-verify" type="button" class="btn btn-primary">Verify</button>
                      </div>
                     <div id="recaptcha-container"></div>
                 </form>
@@ -52,24 +54,24 @@
         }
       );
              firebase.auth().onAuthStateChanged(function(user){
-                if (user) {
-                  console.log("USER LOGGED IN");
-                } else {
-                  // No user is signed in.
-                  console.log("USER NOT LOGGED IN");
-                }
-                // if(user){
-                //   var displayName = user.displayName;
-                //   var email = user.email;
-                //   var emailVerified = user.emailVerified;
-                //   var photoURL = user.photoURL;
-                //   var isAnonymous = user.isAnonymous;
-                //   var uid = user.uid;
-                //   var providerData = user.providerData;
-                //   console.log(displayName);
-                //   console.log(email);
-                //     window.location.href = "Home.html";
+                // if (user) {
+                //   console.log("USER LOGGED IN");
+                // } else {
+                //   // No user is signed in.
+                //   console.log("USER NOT LOGGED IN");
                 // }
+                if(user){
+                  var displayName = user.displayName;
+                  var email = user.email;
+                  var emailVerified = user.emailVerified;
+                  var photoURL = user.photoURL;
+                  var isAnonymous = user.isAnonymous;
+                  var uid = user.uid;
+                  var providerData = user.providerData;
+                  console.log(displayName);
+                  console.log(email);
+                    window.location.href = "Home.html";
+                }
             });
         </script>
 </body>

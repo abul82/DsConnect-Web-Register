@@ -82,6 +82,7 @@ var otp_form = document.getElementById("otp-form");
         .then(function(confirmationResult) {
             window.confirmationResult = confirmationResult;
            otp_form.style.display = "block";
+           $("#recaptcha-container").style.display = "none";
         console.log(confirmationResult);
           });
     
