@@ -18,7 +18,8 @@ const config = {
 
  firebase.auth.Auth.Persistence.LOCAL; 
 firebase.auth().languageCode = 'en';
-
+var otp_form = document.getElementById("otp-form");
+otp-form.style.display = "none";
  $("#btn-login").click(function(){
         // var email = $("#email").val();
         // var password = $("#password").val(); 
@@ -46,6 +47,7 @@ firebase.auth().languageCode = 'en';
         var result = firebase.auth().signInWithPhoneNumber(phoneNumber, appVerifier)
         .then(function(confirmationResult) {
             window.confirmationResult = confirmationResult;
+            otp-form.style.display = "block";
         console.log(confirmationResult);
           });
     
@@ -79,6 +81,7 @@ firebase.auth().languageCode = 'en';
         var result = firebase.auth().signInWithPhoneNumber(phoneNumber, appVerifier)
         .then(function(confirmationResult) {
             window.confirmationResult = confirmationResult;
+            otp-form.style.display = "block";
         console.log(confirmationResult);
           });
     
@@ -91,7 +94,18 @@ firebase.auth().languageCode = 'en';
             console.log(errorMessage);
         });
  }
-
+$("#btn-verify").click(function(){
+        var code = document.getElementById("otp").value;
+        confirmationResult
+          .confirm(code)
+          .then(function(result) {
+            var user = result.user;
+            console.log(user);
+          })
+          .catch(function(error) {
+            console.log(error);
+          });
+    });
 $("#btn-logout").click(function(){
         var result = firebase.auth().signOut();
         result.catch(function(error){

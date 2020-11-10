@@ -21,18 +21,14 @@
                     <div class="form-group">
                         <label for="email">Phone Number<label>
                         <input type="text" id="email" class="form-control" />
+                        <button id="btn-login" type="button" class="btn btn-primary">Send OTP</button>
                     </div>
-                    <!-- <div class="form-group">
-                            <label for="password">Password</label>
-                            <input type="password" id="password" class="form-control" />
-                     </div>-->
+                     <div class="form-group" id="otp-form">
+                            <label for="otp">OTP</label>
+                            <input type="number" id="otp" class="form-control" />
+                            <button id="btn-verify" type="button" class="btn btn-primary">Verify</button>
+                     </div>
                     <div id="recaptcha-container"></div>
-                    <div class="form-group">
-                        <button id="btn-login" type="button" class="btn btn-primary">Login</button>
-                    </div>
-                     <div class="form-group">
-                        <button id="btn-logout" type="button" class="btn btn-primary">LogOut</button>
-                    </div>
                 </form>
             </div>
         </div>
