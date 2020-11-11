@@ -34,8 +34,8 @@ function loadUserType(){
 		        type: 'GET',
 		        header : 'Access-Control-Allow-Origin',
 		        data: {AuthenticationToken:authToken},
-		        error: function() {
-
+		        error: function(error) {
+					console.log(error);
 		        	alert('Something is wrong');
 		        },
 		        success: function(data)
