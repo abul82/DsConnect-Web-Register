@@ -43,23 +43,7 @@
             window.onload = function() {
           var otp_form = document.getElementById("otp-form");
               otp_form.style.display = "none";
-            };
-            window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier(
-        "recaptcha-container",
-        {
-          size: "normal",
-          callback: function(response) {
-            submitPhoneNumber();
-          }
-        }
-      );
-             firebase.auth().onAuthStateChanged(function(user){
-                // if (user) {
-                //   console.log("USER LOGGED IN");
-                // } else {
-                //   // No user is signed in.
-                //   console.log("USER NOT LOGGED IN");
-                // }
+               firebase.auth().onAuthStateChanged(function(user){
                 if(user){
                   var displayName = user.displayName;
                   var email = user.email;
@@ -73,6 +57,17 @@
                     window.location.href = "Home.html";
                 }
             });
+            };
+            window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier(
+        "recaptcha-container",
+        {
+          size: "normal",
+          callback: function(response) {
+            submitPhoneNumber();
+          }
+        }
+      );
+            
         </script>
 </body>
 </html>

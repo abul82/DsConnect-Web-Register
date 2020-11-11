@@ -25,20 +25,37 @@ function loadUser(){
 }
 
 function loadUserType(){
-	fetch('https://dsconnectwebapp.azurewebsites.net/api/v1/usertype', {
-	method: 'GET',
-	body: '-H "accept: application/json" -H "AuthenticationToken: ' + encodeURIComponent(authToken),
-	headers: {
-		'Content-type': 'application/x-www-form-urlencoded'
-	}
-		}).then(function (response) {
-			if (response.ok) {
-				return response.json();
-			}
-			return Promise.reject(response);
-		}).then(function (data) {
-			console.log(data);
-		}).catch(function (error) {
-			console.log('Something went wrong.', error);
-		});
+	var request = new XMLHttpRequest()
+
+		request.open('GET', 'https://dsconnectwebapp.azurewebsites.net/api/v1/usertype', true)
+		request.onload = function () {
+		  // Begin accessing JSON data here
+		  var data = JSON.parse(this.response)
+
+		  if (request.status >= 200 && request.status < 400) {
+		    data.forEach((movie) => {
+		      console.log(movie.title)
+		    })
+		  } else {
+		    console.log('error')
+		  }
+		}
+
+		request.send()
+	// fetch('https://dsconnectwebapp.azurewebsites.net/api/v1/usertype', {
+	// method: 'GET',
+	// body: '-H "accept: application/json" -H "AuthenticationToken: ' + encodeURIComponent(authToken),
+	// headers: {
+	// 	'Content-type': 'application/x-www-form-urlencoded'
+	// }
+	// 	}).then(function (response) {
+	// 		if (response.ok) {
+	// 			return response.json();
+	// 		}
+	// 		return Promise.reject(response);
+	// 	}).then(function (data) {
+	// 		console.log(data);
+	// 	}).catch(function (error) {
+	// 		console.log('Something went wrong.', error);
+	// 	});
 }
