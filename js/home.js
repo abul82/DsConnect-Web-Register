@@ -23,15 +23,15 @@ function loadUser(){
                     }
                    });
 }
-
 function loadUserType(){
 		var loop=true;
 		var val = "application/json";
 		 	if(loop==true)
 		    {
 		        $.ajax({
-		        url: 'https://dsconnectwebapp.azurewebsites.net/api/v1/usertype',
+		        url: 'ttps://cors-anywhere.herokuapp.com/https://dsconnectwebapp.azurewebsites.net/api/v1/usertype',
 		        type: 'GET',
+		        header : 
 		        data: {accept: val,AuthenticationToken:authToken},
 		        error: function() {
 
