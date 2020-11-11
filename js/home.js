@@ -32,6 +32,7 @@ function loadUserType(){
 		        $.ajax({
 		        url: 'https://dsconnectwebapp.azurewebsites.net/api/v1/usertype',
 		        type: 'GET',
+		        header : 'Access-Control-Allow-Origin',
 		        data: {AuthenticationToken:authToken},
 		        error: function() {
 
