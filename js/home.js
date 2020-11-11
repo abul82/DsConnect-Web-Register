@@ -25,23 +25,41 @@ function loadUser(){
 }
 
 function loadUserType(){
-	var request = new XMLHttpRequest()
+		var loop=true;
+		var val = "application/json";
+		 	if(loop==true)
+		    {
+		        $.ajax({
+		        url: 'https://dsconnectwebapp.azurewebsites.net/api/v1/usertype',
+		        type: 'GET',
+		        data: {accept: val,AuthenticationToken:authToken},
+		        error: function() {
 
-		request.open('GET', 'https://dsconnectwebapp.azurewebsites.net/api/v1/usertype', true)
-		request.onload = function () {
-		  // Begin accessing JSON data here
-		  var data = JSON.parse(this.response)
+		        	alert('Something is wrong');
+		        },
+		        success: function(data)
+		        {
+		         console.log(data);
+		        }
+		        });
+	}
+	// var request = new XMLHttpRequest()
 
-		  if (request.status >= 200 && request.status < 400) {
-		    data.forEach((movie) => {
-		      console.log(movie.title)
-		    })
-		  } else {
-		    console.log('error')
-		  }
-		}
+	// 	request.open('GET', 'https://dsconnectwebapp.azurewebsites.net/api/v1/usertype', true)
+	// 	request.onload = function () {
+	// 	  // Begin accessing JSON data here
+	// 	  var data = JSON.parse(this.response)
 
-		request.send()
+	// 	  if (request.status >= 200 && request.status < 400) {
+	// 	    data.forEach((movie) => {
+	// 	      console.log(movie.title)
+	// 	    })
+	// 	  } else {
+	// 	    console.log('error')
+	// 	  }
+	// 	}
+
+	// 	request.send()
 	// fetch('https://dsconnectwebapp.azurewebsites.net/api/v1/usertype', {
 	// method: 'GET',
 	// body: '-H "accept: application/json" -H "AuthenticationToken: ' + encodeURIComponent(authToken),
