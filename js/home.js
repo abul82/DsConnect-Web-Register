@@ -31,7 +31,7 @@ function loadUserType(){
 		        $.ajax({
 		        url: 'ttps://cors-anywhere.herokuapp.com/https://dsconnectwebapp.azurewebsites.net/api/v1/usertype',
 		        type: 'GET',
-		        header : 
+		        header : 'Access-Control-Allow-Origin',
 		        data: {accept: val,AuthenticationToken:authToken},
 		        error: function() {
 
